@@ -10,4 +10,8 @@
 			<User class="h-6 w-6" />
 		</Button>
 	</DropdownMenu.Trigger>
+	<DropdownMenu.Content>
+		<DropdownMenu.Item>Login</DropdownMenu.Item>
+		<DropdownMenu.Item>Register</DropdownMenu.Item>
+	</DropdownMenu.Content>
 </DropdownMenu.Root>
