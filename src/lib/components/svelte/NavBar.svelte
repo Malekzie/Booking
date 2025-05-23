@@ -65,11 +65,11 @@
 	</li>
 {/snippet}
 
-<NavigationMenu.Root class="relative z-10 flex w-full justify-center">
+<NavigationMenu.Root class="relative z-10 my-2 flex w-full justify-center">
 	<NavigationMenu.List class="group flex list-none items-center justify-center p-1">
 		<NavigationMenu.Item value="getting-started">
 			<NavigationMenu.Trigger
-				class="hover:text-accent-foreground focus:bg-muted focus:text-accent-foreground data-[state=open]:shadow-mini dark:hover:bg-muted dark:data-[state=open]:bg-muted group inline-flex h-8 w-max items-center justify-center rounded-[7px] bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-white focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-white"
+				class="hover:text-accent-foreground focus:bg-muted focus:text-accent-foreground data-[state=open]:shadow-mini dark:hover:bg-muted dark:data-[state=open]:bg-muted group inline-flex h-8 w-max items-center justify-center rounded-[7px] bg-transparent px-4 py-2 text-sm font-medium font-semibold transition-colors hover:bg-white focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-white"
 			>
 				Getting started
 				<ChevronDown
@@ -89,34 +89,34 @@
 							class="from-muted/50 to-muted flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b p-6 no-underline outline-hidden select-none focus:shadow-md"
 						>
 							<!-- <Icons.logo class="h-6 w-6" /> -->
-							<div class="mt-4 mb-2 text-lg font-medium">Bits UI</div>
+							<div class="mt-4 mb-2 text-lg font-medium">Travel Experts</div>
 							<p class="text-muted-foreground text-sm leading-tight">
-								The headless components for Svelte.
+								Where your ideas takes flight
 							</p>
 						</NavigationMenu.Link>
 					</li>
 
 					{@render ListItem({
-						href: '/docs',
-						title: 'Introduction',
-						content: 'Headless components for Svelte and SvelteKit'
+						href: '/about',
+						title: 'About Us',
+						content: 'Learn more about us and our mission'
 					})}
 					{@render ListItem({
-						href: '/docs/getting-started',
-						title: 'Getting Started',
-						content: 'How to install and use Bits UI'
+						href: '/booking',
+						title: 'Booking',
+						content: 'Book your next trip with us'
 					})}
 					{@render ListItem({
-						href: '/docs/styling',
-						title: 'Styling',
-						content: 'How to style Bits UI components'
+						href: '/faq',
+						title: 'FAQ',
+						content: 'Frequently asked questions'
 					})}
 				</ul>
 			</NavigationMenu.Content>
 		</NavigationMenu.Item>
 		<NavigationMenu.Item>
 			<NavigationMenu.Trigger
-				class="hover:text-accent-foreground focus:bg-muted focus:text-accent-foreground data-[state=open]:shadow-mini dark:hover:bg-muted dark:data-[state=open]:bg-muted group inline-flex h-8 w-max items-center justify-center rounded-[7px] bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-white focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-white"
+				class="hover:text-accent-foreground focus:bg-muted focus:text-accent-foreground data-[state=open]:shadow-mini dark:hover:bg-muted dark:data-[state=open]:bg-muted group inline-flex h-8 w-max items-center justify-center rounded-[7px] bg-transparent px-4 py-2 text-sm font-medium font-semibold transition-colors hover:bg-white focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-white"
 			>
 				Components
 				<ChevronDown
@@ -143,8 +143,8 @@
 				class="hover:text-accent-foreground focus:bg-muted focus:text-accent-foreground data-[state=open]:shadow-mini dark:hover:bg-muted dark:data-[state=open]:bg-muted group inline-flex h-8 w-max items-center justify-center rounded-[7px] bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-white focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-white"
 				href="/docs"
 			>
-				<span class="hidden sm:inline"> Documentation </span>
-				<span class="inline sm:hidden"> Docs </span>
+				<span class="hidden font-semibold sm:inline"> Documentation </span>
+				<span class="inline font-semibold sm:hidden"> Docs </span>
 			</NavigationMenu.Link>
 		</NavigationMenu.Item>
 		<NavigationMenu.Indicator

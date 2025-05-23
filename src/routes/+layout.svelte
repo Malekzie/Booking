@@ -15,8 +15,14 @@
 
 <main class="h-auto w-full">
 	<div class="my-2 flex">
+		<div class="mx-5 flex gap-3">
+			<div class="bg-muted rounded-lg">
+				<img src="/logo.png" alt="Logo" class="h-15 w-15 rounded-lg" />
+			</div>
+			<span class="font-semibold">Travel Experts</span>
+		</div>
 		<NavBar />
-		<div class="mx-5 my-1 flex gap-5">
+		<div class="mx-5 flex items-center gap-5">
 			<DarkMode />
 			<Profile />
 		</div>
