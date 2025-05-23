@@ -3,3 +3,5 @@
 
 	let { data }: { data: PageData } = $props();
 </script>
+
+Youre a passenger, nice

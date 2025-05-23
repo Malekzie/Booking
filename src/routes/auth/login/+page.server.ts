@@ -44,6 +44,6 @@ export const actions: Actions = {
 		const session = await createSession(sessionToken, user.id);
 		setSessionTokenCookie(event, sessionToken, session.expiresAt);
 
-		return redirect(302, '/');
+		return redirect(302, '/dashboard');
 	}
 };

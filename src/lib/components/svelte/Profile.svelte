@@ -17,7 +17,11 @@
 				<Button variant="ghost" href="/dashboard" size="sm" class="w-full">Profile</Button>
 			</DropdownMenu.Item>
 			<DropdownMenu.Item>
-				<Button variant="ghost" href="/auth/register" size="sm" class="w-full">Logout</Button>
+				<form method="POST" action="/auth/logout" style="display: contents;">
+					<Button type="submit" variant="ghost" size="sm" class="w-full cursor-pointer"
+						>Logout</Button
+					>
+				</form>
 			</DropdownMenu.Item>
 		{:else}
 			<DropdownMenu.Item>
