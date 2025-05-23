@@ -13,7 +13,8 @@
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint .",
 		"db:migrate": "prisma migrate dev --name",
-		"db:generate": "prisma generate"
+		"db:generate": "prisma generate",
+		"postinstall": "pnpm prisma generate --no-engine && pnpm check"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^1.2.5",
