@@ -1,7 +1,7 @@
 <script lang="ts">
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 	import { User } from 'lucide-svelte';
-	import Button from '../ui/button/button.svelte';
+	import { Button } from '$lib/components/ui/button/index.js';
 </script>
 
 <DropdownMenu.Root>
@@ -14,6 +14,8 @@
 		<DropdownMenu.Item>
 			<Button variant="link" href="/auth/login" size="sm">Login</Button>
 		</DropdownMenu.Item>
-		<DropdownMenu.Item>Register</DropdownMenu.Item>
+		<DropdownMenu.Item>
+			<Button variant="link" href="/auth/register" size="sm">Register</Button>
+		</DropdownMenu.Item>
 	</DropdownMenu.Content>
 </DropdownMenu.Root>

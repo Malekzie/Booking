@@ -19,7 +19,7 @@ model User {
   email    String    @unique
   password String
   username String?
-  role     Role      @default(USER)
+  role     Role      @default(PASSENGER)
   bookings Booking[]
   sessions Session[]
 }
@@ -32,25 +32,31 @@ model Session {
   user User @relation(references: [id], fields: [userId], onDelete: Cascade)
 }
 
-model Room {
-  id       String    @id @default(uuid())
-  name     String
-  capacity Int
-  bookings Booking[]
+model Flight {
+  id           String    @id @default(uuid())
+  flightNumber String    @unique
+  origin       String
+  destination  String
+  departure    DateTime
+  arrival      DateTime
+  seatsTotal   Int
+  bookings     Booking[]
 }
 
 model Booking {
-  id        String   @id @default(uuid())
-  user      User     @relation(fields: [userId], references: [id])
-  userId    String
-  room      Room     @relation(fields: [roomId], references: [id])
-  roomId    String
-  date      String // e.g., '2025-07-22'
-  timeSlot  String // e.g., '09:00-10:00'
+  id     String @id @default(uuid())
+  user   User   @relation(fields: [userId], references: [id])
+  userId String
+
+  flight   Flight @relation(fields: [flightId], references: [id])
+  flightId String
+
+  seat Int // Optional: if seat selection is enabled
+
   createdAt DateTime @default(now())
 }
 
 enum Role {
-  USER
+  PASSENGER
   ADMIN
 }

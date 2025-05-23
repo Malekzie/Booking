@@ -6,7 +6,7 @@
 </script>
 
 <div
-	class=" flex h-[89vh] max-h-screen flex-col items-center justify-center rounded-lg bg-[url(/login-bg.jpg)] bg-cover bg-center p-6 md:p-10"
+	class=" flex h-[89vh] max-h-screen flex-col items-center justify-center rounded-lg bg-[url(/register-bg.jpg)] bg-cover bg-center p-6 md:p-10"
 >
 	<div class="w-full max-w-sm md:max-w-3xl">
 		<RegisterForm {data} />

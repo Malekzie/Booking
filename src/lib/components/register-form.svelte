@@ -6,6 +6,7 @@
 	import { registerSchema, type RegisterSchema } from '$lib/schemas/userSchema';
 	import { type SuperValidated, type Infer, superForm } from 'sveltekit-superforms';
 	import { zodClient } from 'sveltekit-superforms/adapters';
+	import { LoaderIcon } from 'lucide-svelte';
 
 	let {
 		data,
@@ -19,7 +20,7 @@
 	const form = superForm(data.form, {
 		validators: zodClient(registerSchema)
 	});
-	const { form: formData, enhance } = form;
+	const { form: formData, enhance, submitting } = form;
 </script>
 
 <div class={cn('flex flex-col gap-6', className)} {...restProps}>
@@ -31,57 +32,75 @@
 						<h1 class="text-2xl font-bold">New here?</h1>
 						<p class="text-muted-foreground text-balance">Register to an Acme Inc account</p>
 					</div>
+
 					<Form.Field {form} name="username">
 						<Form.Control>
-							<Form.Label>Username</Form.Label>
-							<Input
-								type="text"
-								placeholder="Your username"
-								bind:value={$formData.username}
-								required
-							/>
+							{#snippet children({ props })}
+								<Form.Label>Username</Form.Label>
+								<Input
+									{...props}
+									type="text"
+									placeholder="Your username"
+									bind:value={$formData.username}
+								/>
+							{/snippet}
 						</Form.Control>
 						<Form.FieldErrors />
 					</Form.Field>
 					<Form.Field {form} name="email">
 						<Form.Control>
-							<Form.Label>Email</Form.Label>
-							<Input
-								type="email"
-								placeholder="m@example.com"
-								bind:value={$formData.email}
-								required
-							/>
+							{#snippet children({ props })}
+								<Form.Label>Email</Form.Label>
+								<Input
+									{...props}
+									type="text"
+									placeholder="m@email.com"
+									bind:value={$formData.email}
+								/>
+							{/snippet}
 						</Form.Control>
 						<Form.FieldErrors />
 					</Form.Field>
 					<Form.Field {form} name="password">
 						<Form.Control>
-							<Form.Label>Password</Form.Label>
-							<Input type="password" bind:value={$formData.password} required />
-						</Form.Control>
-						<Form.FieldErrors />
-					</Form.Field>
-					<Form.Field {form} name="password">
-						<Form.Control>
-							<Form.Label>Password</Form.Label>
-							<Input type="password" bind:value={$formData.password} required />
+							{#snippet children({ props })}
+								<Form.Label>Password</Form.Label>
+								<Input {...props} type="password" bind:value={$formData.password} />
+							{/snippet}
 						</Form.Control>
 						<Form.FieldErrors />
 					</Form.Field>
 					<Form.Field {form} name="confirmPassword">
 						<Form.Control>
-							<Form.Label>Confirm Password</Form.Label>
-							<Input type="password" bind:value={$formData.confirmPassword} required />
+							{#snippet children({ props })}
+								<Form.Label>Confirm Password</Form.Label>
+								<Input {...props} type="password" bind:value={$formData.confirmPassword} />
+							{/snippet}
 						</Form.Control>
 						<Form.FieldErrors />
 					</Form.Field>
-					<Form.Button class="w-full">Register</Form.Button>
+
+					{#if $submitting}
+						<Form.Button class="w-full" disabled>
+							<div class="invalid flex items-center gap-5">
+								<LoaderIcon class="animate-spin" />
+								<span>Signing up</span>
+							</div>
+						</Form.Button>
+					{:else}
+						<Form.Button class="w-full">
+							<span class="font-semibold"> Register </span>
+						</Form.Button>
+					{/if}
+					<div class="mb-5 text-center text-sm">
+						Already have an account?
+						<a href="/auth/login" class="underline underline-offset-4"> Login </a>
+					</div>
 				</div>
 			</form>
 			<div class="bg-muted relative hidden md:block">
 				<img
-					src="/login.jpg"
+					src="/register.jpg"
 					alt="placeholder"
 					class="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
 				/>
