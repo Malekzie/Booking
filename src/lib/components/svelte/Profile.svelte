@@ -11,7 +11,9 @@
 		</Button>
 	</DropdownMenu.Trigger>
 	<DropdownMenu.Content>
-		<DropdownMenu.Item>Login</DropdownMenu.Item>
+		<DropdownMenu.Item>
+			<Button variant="link" href="/auth/login" size="sm">Login</Button>
+		</DropdownMenu.Item>
 		<DropdownMenu.Item>Register</DropdownMenu.Item>
 	</DropdownMenu.Content>
 </DropdownMenu.Root>
