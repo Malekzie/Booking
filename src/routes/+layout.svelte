@@ -8,7 +8,7 @@
 	import Profile from '$lib/components/svelte/Profile.svelte';
 	import DarkMode from '$lib/components/svelte/darkMode.svelte';
 
-	let { children } = $props();
+	let { children, data } = $props();
 </script>
 
 <ModeWatcher />
@@ -34,7 +34,7 @@
 		<!-- Profile and DarkMode -->
 		<div class="mx-5 flex items-center gap-5">
 			<DarkMode />
-			<Profile />
+			<Profile {data} />
 		</div>
 	</div>
 	<Separator />
